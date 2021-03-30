@@ -1,0 +1,7 @@
+li:hover{
+    background-color: tomato;
+    border-radius: 10px;
+}
+.nv{
+    position: fixed;
+}
