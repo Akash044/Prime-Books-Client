@@ -2,7 +2,6 @@ import "./App.css";
 import Home from "./Components/Home/Home";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { createContext, useState } from "react";
-import Navbar from "./Components/Navbar/Navbar";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
@@ -16,7 +15,6 @@ function App() {
   return (
   <BooksContext.Provider value={[user, setUser]}>
     <Router>
-          <Navbar></Navbar>
           <Switch>
             <Route exact path="/">
              <Home></Home>
@@ -36,10 +34,8 @@ function App() {
             <PrivateRoute path="/admin">
               <AdminPage></AdminPage>
             </PrivateRoute>
-      
           </Switch>
         </Router>
-
   </BooksContext.Provider>
   );
 }

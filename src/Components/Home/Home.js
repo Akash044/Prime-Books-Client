@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Books from "../Books/Books";
+import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
+  document.title="Home";
   const [booksData, setBooksData] = useState([]);
   useEffect(() => {
     fetch("http://localhost:8080/books")
@@ -14,7 +16,8 @@ const Home = () => {
   let i=1;
   return (
     <div>
-      {booksData.length < 23 ? (
+      <Navbar></Navbar>
+      {!booksData.length ? (
         <div className="d-flex justify-content-center ">
           <div
             className="spinner-border"

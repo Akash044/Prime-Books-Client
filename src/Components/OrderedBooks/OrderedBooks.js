@@ -2,14 +2,16 @@ import './OrderedBooks.css'
 import React from 'react';
 
 const OrderedBooks = (props) => {
-    const {email, title, author, price} = props.orderInfo;
+    const {email, title, author, price, time} = props.orderInfo;
     return (
-        <div className="order-bg">
-            <h5><i>Book title:</i> {title}</h5>
-            <h5><i>Author:</i> {author}</h5>
-            <h5><i>Price:</i> ${price}</h5>
+        <tr className="order-bg">
+            <td>{title}</td>
+            <td>{author}</td>
+            <td>1</td>
+            <td>${price}</td>
+            <td>{time}</td>
             
-        </div>
+        </tr>
     );
 };
 

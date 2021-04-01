@@ -6,10 +6,11 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "../../firebase.config"
 import { useHistory, useLocation } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
 if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig); }
 
 const LoginPage = () => {
-    document.title="Check Out";
+    document.title="Login";
     const provider = new firebase.auth.GoogleAuthProvider();
     const [loggedUser, setLoggedUser] = useContext(BooksContext);
 
@@ -27,10 +28,10 @@ const LoginPage = () => {
             }).catch(() => { });
     }
 
-    return (
-        <div className="justify-content-center">
-            <button className="btn btn-primary" onClick={handleGoogleSignIn}> <FontAwesomeIcon className='font-awesome me-2' icon={faGoogle} />Continue with Google</button>
-        </div>
+    return (<><Navbar></Navbar>
+        <div className="login-icon">
+            <button className="btn violet-color text-white" onClick={handleGoogleSignIn}> <FontAwesomeIcon className='font-awesome me-2' icon={faGoogle} />Continue with Google</button>
+        </div></>
     );
 };
 

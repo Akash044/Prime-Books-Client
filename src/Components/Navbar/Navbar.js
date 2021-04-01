@@ -1,11 +1,20 @@
 import './Navbar.css'
 import React, { useContext } from "react";
 import { BooksContext } from '../../App';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Navbar = () => {
   const [loggedUser, setLoggedUser] = useContext(BooksContext);
   const {email} = loggedUser;
+  const history = useHistory()
+
+  const handleSignOut = () =>{
+    setLoggedUser({});
+    history.push('/')
+  }
+  const handleSignIn = () =>{
+    history.push('/login')
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-light nv">
       <div className="container-fluid">
@@ -48,12 +57,12 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
-                href="#"
+                to='/checkout'
               >
                 <h5>Checkout</h5>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link active" href="#">
@@ -61,7 +70,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <button className="btn btn-info"><h6>{email ? 'Log out' : 'Login'}</h6></button>
+              <button className="btn violet-color text-white" onClick={email? handleSignOut: handleSignIn}><h6>{email ? 'Log out' : 'Login'}</h6></button>
             </li>
           </ul>
         </div>
