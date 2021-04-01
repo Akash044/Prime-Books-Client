@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Navbar/Navbar";
 import Books from "../Books/Books";
-import fakedata from "../../Data/fakedata.json";
 
 const Home = () => {
   const [booksData, setBooksData] = useState([]);
-  // const [spinner, setSpinner] = useState(false);
   useEffect(() => {
     fetch("http://localhost:8080/books")
       .then((res) => res.json())
@@ -13,6 +10,8 @@ const Home = () => {
         setBooksData(data);
       });
   }, []);
+  // console.log(booksData);
+  let i=1;
   return (
     <div>
       {booksData.length < 23 ? (
@@ -28,7 +27,7 @@ const Home = () => {
       ) : (
         <div className="justify-content-center container row m-5">
           {booksData.map((book) => (
-            <Books key={book.ISBN} details={book}></Books>
+            <Books key={i++} details={book}></Books>
           ))}
         </div>
       )}

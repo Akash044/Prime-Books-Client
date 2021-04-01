@@ -1,13 +1,17 @@
 import './Navbar.css'
-import React from "react";
+import React, { useContext } from "react";
+import { BooksContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const [loggedUser, setLoggedUser] = useContext(BooksContext);
+  const {email} = loggedUser;
   return (
     <nav className="navbar navbar-expand-lg navbar-light nv">
       <div className="container-fluid">
-        <a className="navbar-brand ms-5" href="#">
+        <Link className="navbar-brand ms-5" to="/">
           <h3>PRIME BOOKS</h3>
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,23 +29,23 @@ const Navbar = () => {
         >
           <ul className="navbar-nav text-dark ">
             <li className="nav-item ">
-              <a
+              <Link
                 className="nav-link active"
                 aria-current="page"
-                href="#"
+                to='/'
               >
                 <h5>Home</h5>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <Link className="nav-link active" to='/orders'>
                <h5>Orders</h5>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <Link className="nav-link active" to='/admin'>
                <h5>Admin</h5>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a
@@ -52,7 +56,12 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <button className="btn btn-info"><h6>SIGN IN</h6></button>
+              <a className="nav-link active" href="#">
+               <h5>{loggedUser.userName}</h5>
+              </a>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-info"><h6>{email ? 'Log out' : 'Login'}</h6></button>
             </li>
           </ul>
         </div>

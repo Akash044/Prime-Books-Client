@@ -6,6 +6,8 @@ import Navbar from "./Components/Navbar/Navbar";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import Checkout from "./Components/Checkout/Checkout";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import Orders from "./Components/Orders/Orders";
+import AdminPage from "./Components/AdminPage/AdminPage";
 
 export const BooksContext = createContext();
 
@@ -27,6 +29,12 @@ function App() {
             </Route>
             <PrivateRoute path="/checkout/:id">
               <Checkout></Checkout>
+            </PrivateRoute>
+            <PrivateRoute path="/orders">
+              <Orders></Orders>
+            </PrivateRoute>
+            <PrivateRoute path="/admin">
+              <AdminPage></AdminPage>
             </PrivateRoute>
       
           </Switch>
