@@ -179,7 +179,14 @@ const AdminPage = () => {
                   type="file"
                   onChange={handleImageData}
                   defaultValue={image}
-                />
+                />{!newBooksData.image && spinner && (<>
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  <strong> Uploading...</strong></>
+                )}
               </div>
             </div>
             <button
@@ -187,13 +194,6 @@ const AdminPage = () => {
               onClick={handleAddNewBook}
               disabled={!newBooksData.image && true}
             >
-              {!newBooksData.image && spinner && (
-                <span
-                  class="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-              )}
               Add Book
             </button>
           </>
