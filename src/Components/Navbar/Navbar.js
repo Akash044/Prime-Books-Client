@@ -64,7 +64,7 @@ const Navbar = () => {
                 <h5>Checkout</h5>
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mt-2 pe-2">
                <h5>{loggedUser.userName}</h5>
             </li>
             <li className="nav-item">
