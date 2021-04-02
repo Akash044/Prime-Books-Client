@@ -56,7 +56,8 @@ const AdminPage = () => {
       });
   };
 
-  const handleAddNewBook = () => {
+  const handleAddNewBook = (e) => {
+    e.preventDefault();
     fetch("https://apricot-pie-46014.herokuapp.com/addBook", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -64,13 +65,14 @@ const AdminPage = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        const newData = new FormData();
         setNewBooksData({});
         setSpinner(!spinner);
         alert("Successfully added");
       });
   };
 
-  const { title, author, price, image } = newBooksData;
+
   let i = 1;
   return (
     <div className="row admin-bg">
@@ -142,16 +144,16 @@ const AdminPage = () => {
         ) : (
           <>
             <h2>Add book</h2>
-            <div className="input-group">
+            <div className="input-group bg-info shadow rounded p-3">
               <div className="m-3">
                 <h4>Book Name</h4>
+               
                 <input
                   type="text"
                   name="title"
-                  className="mb-3"
                   onBlur={handleOnBlur}
                   placeholder="Enter Book Name"
-                  defaultValue={title}
+                  className="mb-3"
                 />
                 <br />
                 <h4>Book Price</h4>
@@ -160,7 +162,6 @@ const AdminPage = () => {
                   name="price"
                   onBlur={handleOnBlur}
                   placeholder="Enter price"
-                  defaultValue={price}
                 />
               </div>
               <div className="m-3">
@@ -171,26 +172,25 @@ const AdminPage = () => {
                   className="mb-3"
                   onBlur={handleOnBlur}
                   placeholder="Enter Author name"
-                  defaultValue={author}
                 />
                 <br />
                 <h4>Upload an image</h4>
                 <input
                   type="file"
                   onChange={handleImageData}
-                  defaultValue={image}
-                />{!newBooksData.image && spinner && (<>
+                />{!newBooksData.image && spinner && (<div>
                   <span
                     class="spinner-border spinner-border-sm"
                     role="status"
                     aria-hidden="true"
                   ></span>
-                  <strong> Uploading...</strong></>
+                  <strong> Uploading...</strong></div>
                 )}
               </div>
             </div>
             <button
-              className="btn violet-color text-white ms-3"
+            // type="submit"
+              className="btn violet-color text-white ms-3 mt-3"
               onClick={handleAddNewBook}
               disabled={!newBooksData.image && true}
             >

@@ -4,7 +4,7 @@ import React from 'react';
 const OrderedBooks = (props) => {
     const {title, author, price, time} = props.orderInfo;
     return (
-        <tr className="order-bg">
+        <tr>
             <td>{title}</td>
             <td>{author}</td>
             <td>1</td>

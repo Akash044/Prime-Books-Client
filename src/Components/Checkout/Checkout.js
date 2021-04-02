@@ -26,7 +26,7 @@ const Checkout = () => {
   const { title, author, price, time } = userAndBookInfo;
   const history = useHistory();
   const handleCheckOut = () => {
-    fetch("https://apricot-pie-46014.herokuapp.com//addOrder", {
+    fetch("https://apricot-pie-46014.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userAndBookInfo),

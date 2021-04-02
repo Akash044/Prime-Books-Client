@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./Components/Home/Home";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { createContext, useState } from "react";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import Checkout from "./Components/Checkout/Checkout";

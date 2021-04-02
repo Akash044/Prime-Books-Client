@@ -65,9 +65,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
                <h5>{loggedUser.userName}</h5>
-              </a>
             </li>
             <li className="nav-item">
               <button className="btn violet-color text-white" onClick={email? handleSignOut: handleSignIn}><h6>{email ? 'Log out' : 'Login'}</h6></button>

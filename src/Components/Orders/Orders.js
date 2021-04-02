@@ -21,15 +21,15 @@ const Orders = () => {
     <>
       <Navbar></Navbar>
       <div className="container mt-4">
+        <div className="rounded shadow p-3 bg-gradient text-white" style={{backgroundColor:"#6946F4"}}> 
         <h3>User Name: {userName}</h3>
         <h4>Email: {email}</h4>
         <h5>Ordered books list:</h5>
-        <table
-          border="1"
-          style={{ width: "95%", textAlign: "center" }}
-        >
-          <thead>
-            <tr style={{ borderBottom: "1px solid black", padding: "10px" }}>
+        </div>
+        
+        <table className="table">
+          <thead className="thead-dark">
+            <tr>
               <th>Book Name</th>
               <th>Author name</th>
               <th>Quantity</th>
