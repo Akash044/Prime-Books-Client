@@ -5,4 +5,4 @@ Features:
 3. Admin will able to add new books and delete existing books item.
 
 Here you can find these features, so hurry up :)
-(https://prime-books-auth.web.app/)[https://prime-books-auth.web.app/]
+[https://prime-books-auth.web.app/](https://prime-books-auth.web.app/)
