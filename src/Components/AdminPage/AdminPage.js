@@ -12,7 +12,7 @@ const AdminPage = () => {
   const [booksData, setBooksData] = useState([]);
   const [newBooksData, setNewBooksData] = useState({});
   useEffect(() => {
-    fetch("http://localhost:8080/books")
+    fetch("https://apricot-pie-46014.herokuapp.com/books")
       .then((res) => res.json())
       .then((data) => {
         setBooksData(data);
@@ -21,7 +21,7 @@ const AdminPage = () => {
 
   const handleDeleteBook = (e, id) => {
     console.log(e.target.parentNode.parentNode, id);
-    fetch(`http://localhost:8080/deleteBook/${id}`, {
+    fetch(`https://apricot-pie-46014.herokuapp.com/deleteBook/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -57,7 +57,7 @@ const AdminPage = () => {
   };
 
   const handleAddNewBook = () => {
-    fetch("http://localhost:8080/addBook", {
+    fetch("https://apricot-pie-46014.herokuapp.com/addBook", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newBooksData),

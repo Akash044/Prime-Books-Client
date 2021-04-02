@@ -9,7 +9,7 @@ const Orders = () => {
   const { userName, email } = userAndBookInfo;
   const [allOrders, setAllOrders] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:8080/allOrder/${email}`)
+    fetch(`https://apricot-pie-46014.herokuapp.com/allOrder/${email}`)
       .then((res) => res.json())
       .then((data) => {
         setAllOrders(data);

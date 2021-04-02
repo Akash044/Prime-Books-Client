@@ -9,7 +9,7 @@ const Checkout = () => {
   const [userAndBookInfo, setUserAndBookInfo] = useContext(BooksContext);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/book/${id}`)
+    fetch(`https://apricot-pie-46014.herokuapp.com/book/${id}`)
       .then((res) => res.json())
       .then((data) => {
         const newData = {
@@ -26,7 +26,7 @@ const Checkout = () => {
   const { title, author, price, time } = userAndBookInfo;
   const history = useHistory();
   const handleCheckOut = () => {
-    fetch("http://localhost:8080/addOrder", {
+    fetch("https://apricot-pie-46014.herokuapp.com//addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userAndBookInfo),

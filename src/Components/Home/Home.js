@@ -7,7 +7,7 @@ const Home = () => {
   document.title = "Home";
   const [booksData, setBooksData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/books")
+    fetch("https://apricot-pie-46014.herokuapp.com/books")
       .then((res) => res.json())
       .then((data) => {
         setBooksData(data);
