@@ -2,7 +2,7 @@ import './OrderedBooks.css'
 import React from 'react';
 
 const OrderedBooks = (props) => {
-    const {email, title, author, price, time} = props.orderInfo;
+    const {title, author, price, time} = props.orderInfo;
     return (
         <tr className="order-bg">
             <td>{title}</td>

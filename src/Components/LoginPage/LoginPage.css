@@ -1,8 +1,9 @@
 .violet-color{
     background-color: #6946F4;
 }
-.login-icon{
+.display-position{
     display: grid;
-    justify-content:center;
+    height: 500px;
+    justify-content:space-evenly;
     align-content: center;
 }

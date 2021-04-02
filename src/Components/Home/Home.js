@@ -1,9 +1,10 @@
+import "./Home.css";
 import React, { useEffect, useState } from "react";
 import Books from "../Books/Books";
 import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
-  document.title="Home";
+  document.title = "Home";
   const [booksData, setBooksData] = useState([]);
   useEffect(() => {
     fetch("http://localhost:8080/books")
@@ -12,10 +13,10 @@ const Home = () => {
         setBooksData(data);
       });
   }, []);
-  // console.log(booksData);
-  let i=1;
+
+  let i = 1;
   return (
-    <div>
+    <div className="container">
       <Navbar></Navbar>
       {!booksData.length ? (
         <div className="d-flex justify-content-center ">
@@ -28,7 +29,7 @@ const Home = () => {
           </div>
         </div>
       ) : (
-        <div className="justify-content-center container row m-5">
+        <div className="card-display mt-5 ms-4">
           {booksData.map((book) => (
             <Books key={i++} details={book}></Books>
           ))}

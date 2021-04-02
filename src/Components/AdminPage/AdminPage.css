@@ -4,3 +4,9 @@
 .bg-color{
     background-color: #19103F;
 }
+.pointer:hover{
+    cursor: pointer;
+    background-color: gray;
+    padding:5px;
+    border-radius: 7px;
+}

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { useHistory, useLocation, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { BooksContext } from "../../App";
 import Navbar from "../Navbar/Navbar";
 
@@ -25,9 +25,6 @@ const Checkout = () => {
 
   const { title, author, price, time } = userAndBookInfo;
   const history = useHistory();
-  const location = useLocation();
-  let { from } = location.state || { from: { pathname: "/" } };
-
   const handleCheckOut = () => {
     fetch("http://localhost:8080/addOrder", {
       method: "POST",
@@ -36,9 +33,9 @@ const Checkout = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        history.push("/orders");
       });
-    history.replace(from);
+    
   };
 
   return (<><Navbar></Navbar>

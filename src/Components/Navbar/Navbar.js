@@ -59,7 +59,7 @@ const Navbar = () => {
             <li className="nav-item">
               <Link
                 className="nav-link active"
-                to='/checkout'
+                to='#'
               >
                 <h5>Checkout</h5>
               </Link>

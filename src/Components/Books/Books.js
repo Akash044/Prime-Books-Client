@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Books = (props) => {
-    const {ISBN, title, author, summary, image, price, _id} = props.details;
+    const {title, author, image, price, _id} = props.details;
   return (
-    <div className="card col-md-3 m-3" style={{width: "16rem"}}>
-      <img src={image} className="card-img-top" style={{height: "15rem"}} alt="..." />
+    <div className="card m-3 shadow" style={{width: "16rem"}}>
+      <img src={image} className="card-img-top p-2" style={{height: "15rem"}} alt="..." />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <h6 className="card-title">{author}</h6>
